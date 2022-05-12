@@ -1,0 +1,9 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory `/Users/edvin/school/cursus/42_so_long'
+make -s -C ./libft
+ 
+make -s -C ./mlx
+ 
+cc ./sources/mandatory/main.o ./sources/mandatory/errors.o ./sources/mandatory/hooks.o ./sources/mandatory/readmap.o ./sources/mandatory/map_check.o -L ./libft -lft -L ./mlx -lmlx -framework OpenGL -framework Appkit -o so_long
+make: Leaving directory `/Users/edvin/school/cursus/42_so_long'
+ 
