@@ -6,14 +6,14 @@
 /*   By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 10:11:36 by gbreana           #+#    #+#             */
-/*   Updated: 2021/10/07 12:10:40 by gbreana          ###   ########.fr       */
+/*   Updated: 2022/05/29 12:26:26 by gbreana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strlen(const char *str)
 {
 	int	i;
-
+	
 	i = 0;
 	while (str[i])
 		i++;

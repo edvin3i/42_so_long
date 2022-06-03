@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   readmap.c                                          :+:      :+:    :+:   */
+/*   map_read.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 08:52:46 by gbreana           #+#    #+#             */
-/*   Updated: 2022/05/13 00:52:37 by gbreana          ###   ########.fr       */
+/*   Updated: 2022/05/30 11:34:34 by gbreana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-int		get_map_width(char **map)
-{
-	int	width;
 
-	width = 0;
-	while (*map[width] && *map[width] != '\n')
-		width++;
-	return(width);
-}
 
 int     count_lines(char *filename)
 {
@@ -29,12 +21,20 @@ int     count_lines(char *filename)
 	char    *tmp;
 	
 	fd = open(filename, O_RDONLY);
-	lines_num = -1;
+	lines_num = 0;
 	while(1)
 	{
 		tmp = get_next_line(fd);
-		lines_num++;
-		if (!tmp)
+		if (tmp)
+		{
+			if (tmp[0] == '\n')
+			{
+				free(tmp);
+				error("map has zero lines.");
+			}
+			lines_num++;
+		}
+		else
 			break ;
 		free(tmp);
 	}
@@ -42,25 +42,27 @@ int     count_lines(char *filename)
 	return (lines_num);
 }
 
-char    **file_to_array(char *filename)
+char    *file_to_array(char *filename)
 {
-	int     fd;
-	int		lines_num;
-	char	**map;
-
-	lines_num = 0;
-	map = malloc(lines_num * sizeof(char) + 1);
-	if (!map)
-		return (NULL);
+	int		fd;
+	char	*temp;
+	char	*line;
+	char	*new_line;
+	
 	fd = open(filename, O_RDONLY);
-	lines_num = count_lines(filename);
-	map[lines_num] = NULL;
-	while (--lines_num >= 0)
+	if (fd == -1)
+		error("file is not readable.");
+	line = ft_strdup("");
+	while (1)
 	{
-		ft_printf("%d\t", lines_num);
-		map[lines_num] = get_next_line(fd);
+		new_line = get_next_line(fd);
+		if (!new_line)
+			break ;
+		temp = line;
+		line = ft_strjoin(line, new_line);
+		free(temp);
+		free(new_line);
 	}
-		
 	close(fd);
-	return (map);
+	return (line);
 }

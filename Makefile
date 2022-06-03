@@ -6,7 +6,7 @@
 #    By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/20 08:25:42 by gbreana           #+#    #+#              #
-#    Updated: 2022/05/11 18:01:27 by gbreana          ###   ########.fr        #
+#    Updated: 2022/06/02 19:59:55 by gbreana          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ MLXLIB		=	mlx
 MDIR		= 	./sources/mandatory/
 BDIR		=	./sources/bounus/
 
-MFLS		=	main.c errors.c hooks.c readmap.c map_check.c
+MFLS		=	main.c errors.c init.c hooks.c map_read.c map_check.c utils.c render.c moves.c
 BFLS		=	
 
 MSRC		=	$(addprefix $(MDIR), $(MFLS))
@@ -36,7 +36,7 @@ MDEPS		=	$(patsubst %.c,%.d,$(MSRC))
 BDEPS		=	$(patsubst %.c,%.d,$(BSRC))
 
 CC			=	cc
-CFLAGS		=	-Wall -Werror -Wextra -MD
+CFLAGS		=	-Wall -Werror -Wextra -MD 
 RM			=	rm -rf
 
 override		OBJS_ALL ?= $(MOBJS)
