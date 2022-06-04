@@ -6,7 +6,7 @@
 #    By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/20 08:25:42 by gbreana           #+#    #+#              #
-#    Updated: 2022/06/05 00:44:48 by gbreana          ###   ########.fr        #
+#    Updated: 2022/06/05 01:10:04 by gbreana          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,10 +22,14 @@ MLXLIB		=	mlx
 
 
 MDIR		= 	./sources/mandatory/
-BDIR		=	./sources/bounus/
+BDIR		=	./sources/bonus/
 
-MFLS		=	main.c errors.c init.c hooks.c map_read.c map_check.c utils.c render.c moves.c
-BFLS		=	
+MFLS		=	main.c errors.c init.c \
+				hooks.c map_read.c map_check.c \
+				utils.c render.c moves.c
+BFLS		=	main_bonus.c errors_bonus.c init_bonus.c \
+				hooks_bonus.c map_read_bonus.c map_check_bonus.c \
+				utils_bonus.c render_bonus.c moves_bonus.c
 
 MSRC		=	$(addprefix $(MDIR), $(MFLS))
 BSRC		=	$(addprefix $(BDIR), $(BFLS))
@@ -45,24 +49,26 @@ RM			=	rm -rf
 override		OBJS_ALL ?= $(MOBJS)
 override		DEP_ALL ?= $(DEPS)
 
-%.o:			%.c Makefile libft/libft.a
-				$(CC) $(CFLAGS) -Imlx -I $(INCL) -c $< -o ${<:.c=.o}
+$(MDIR)/%.o:	%.c Makefile libft/libft.a
+				$(CC) $(CFLAGS) -Imlx -I $(INCLM) -c $< -o ${<:.c=.o}
+$(BDIR)/%.o:	%.c Makefile libft/libft.a
+				$(CC) $(CFLAGS) -Imlx -I $(INCLB) -c $< -o ${<:.c=.o}
 
 
 all:			$(LIBFT) $(MLXLIB) $(NAME)
 
 $(LIBFT):
-				@make -s -C ./libft
+				@make -C ./libft
 
 $(MLXLIB):
 				@make -C ./mlx
 
-#$(MLXLIB) $(LIBFT)
 $(NAME):		$(MLXLIB) $(LIBFT) $(MOBJS)
 				@make -s -C ./mlx
 				@$(CC) $(MOBJS) $(LIB) $(MLX) -o $@
 
 bonus:			$(MLXLIB) $(LIBFT) $(BOBJS)
+				@make -s -C ./mlx
 				@$(CC) $(BOBJS) $(LIB) $(MLX) -o $@
 
 clean:
