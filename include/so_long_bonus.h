@@ -6,7 +6,7 @@
 /*   By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 16:01:03 by gbreana           #+#    #+#             */
-/*   Updated: 2022/06/04 14:41:58 by gbreana          ###   ########.fr       */
+/*   Updated: 2022/06/04 14:08:25 by gbreana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,18 @@
 */
 # define	WALL		"./assets/env/wall.xpm"
 # define	FLOOR		"./assets/env/floor.xpm"
-# define	EXIT		"./assets/env/door_cl.xpm"
-# define	COIN		"./assets/env/coin_1.xpm"
-# define	PLAYER		"./assets/hero/player_forward.xpm"
+# define	EXIT_CL		"./assets/env/door_cl.xpm"
+# define	EXIT_OP		"./assets/env/door_op.xpm"
+# define	COIN_1		"./assets/env/coin_1.xpm"
+# define	COIN_2		"./assets/env/coin_2.xpm"
+# define	PLAYER_S	"./assets/hero/player_forward.xpm"
+# define	PLAYER_L	"./assets/hero/player_left.xpm"
+# define	PLAYER_R	"./assets/hero/player_right.xpm"
+# define	PLAYER_U	"./assets/hero/player_up.xpm"
+# define	PLAYER_D	"./assets/hero/player_down.xpm"
+# define	RAIDER_S	"./assets/enemy/raider_stay.xpm"
+# define	RAIDER_J	"./assets/enemy/raider_jump.xpm"
+# define	RAIDER_D	"./assets/enemy/raider_d.xpm"
 /*
 	Keycodes
 */
@@ -47,9 +56,20 @@ typedef struct	s_assets
 {
 	void	*wall;
 	void	*floor;
-	void	*item;
+	void	*item_1;
+	void	*item_2;
+	void	*item_3;
 	void	*exit;
+	void	*exit_cl;
+	void	*exit_op;
 	void	*player;
+	void	*player_s;
+	void	*player_l;
+	void	*player_r;
+	void	*player_u;
+	void	*player_d;
+	void	*raider_s;
+	void	*raider_j;
 }				t_assets;
 
 typedef struct	s_game
@@ -64,9 +84,11 @@ typedef struct	s_game
 	int			coins;
 	int			exits;
 	int			players;
+	int			raiders;
 	int			steps;
 	t_assets	sprites;
 	t_coord		p_coord;
+	t_coord		r_coord;
 }				t_game;
 
 

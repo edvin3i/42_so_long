@@ -6,7 +6,7 @@
 /*   By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 11:37:35 by gbreana           #+#    #+#             */
-/*   Updated: 2022/06/04 14:49:45 by gbreana          ###   ########.fr       */
+/*   Updated: 2022/06/04 14:08:40 by gbreana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,7 @@ int	key_hook(int keycode, t_game *game)
 		move_right(game);
 	else if (keycode == KEY_ESC)
 		game_over(game);
+	if (game->coins == 0)
+		game->sprites.exit = game->sprites.exit_op;
 	return (0);
 }

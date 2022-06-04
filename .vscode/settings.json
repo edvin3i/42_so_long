@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "filesystem": "c"
+        "filesystem": "c",
+        "__config": "c"
     }
 }

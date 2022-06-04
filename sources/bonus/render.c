@@ -6,7 +6,7 @@
 /*   By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 17:22:52 by gbreana           #+#    #+#             */
-/*   Updated: 2022/06/04 14:45:52 by gbreana          ###   ########.fr       */
+/*   Updated: 2022/06/03 15:00:17 by gbreana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void    put_sprite(t_game *game, int i, int j)
 								game->sprites.exit, j * S_HEIGHT, i * S_WIDHT);
 	 else if (game->map[i][j] == 'C')
 		mlx_put_image_to_window(game->mlx, game->win, \
-								game->sprites.item, j * S_HEIGHT, i * S_WIDHT);
+								game->sprites.item_1, j * S_HEIGHT, i * S_WIDHT);
 	else if (game->map[i][j] == 'P')
 	{
 		mlx_put_image_to_window(game->mlx, game->win, \

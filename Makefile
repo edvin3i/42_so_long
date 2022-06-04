@@ -6,13 +6,14 @@
 #    By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/20 08:25:42 by gbreana           #+#    #+#              #
-#    Updated: 2022/06/02 19:59:55 by gbreana          ###   ########.fr        #
+#    Updated: 2022/06/05 00:44:48 by gbreana          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	so_long
 
-INCL		=	./include/so_long.h
+INCLM		=	./include/so_long.h
+INCLB		=	./include/so_long_bonus.h
 
 LIB			=	-L ./libft -lft
 LIBFT		=	libft.a
@@ -38,6 +39,8 @@ BDEPS		=	$(patsubst %.c,%.d,$(BSRC))
 CC			=	cc
 CFLAGS		=	-Wall -Werror -Wextra -MD 
 RM			=	rm -rf
+
+
 
 override		OBJS_ALL ?= $(MOBJS)
 override		DEP_ALL ?= $(DEPS)

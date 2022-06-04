@@ -6,7 +6,7 @@
 /*   By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 23:09:17 by gbreana           #+#    #+#             */
-/*   Updated: 2022/06/04 14:42:44 by gbreana          ###   ########.fr       */
+/*   Updated: 2022/06/03 14:58:22 by gbreana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ void	map_obj_count(t_game *game)
 	game->coins = sym_count(game, 'C');
 	game->exits = sym_count(game, 'E');
 	game->players = sym_count(game, 'P');
+	game->raiders = sym_count(game, 'R');
 }
 
 int	check_sprites(t_assets *sprites)
@@ -76,11 +77,11 @@ int	check_sprites(t_assets *sprites)
 		error("Wall sprite is not found");
 	if (!sprites->floor)
 		error("Floor sprite is not found");
-	if (!sprites->exit)
+	if (!sprites->exit_cl || !sprites->exit_op)
 		error("Exit sprite is not found");
-	if (!sprites->item)
+	if (!sprites->item_1 || !sprites->item_2)
 		error("Collectible sprite is not found");
-	if (!sprites->player)
+	if (!sprites->player_l || !sprites->player_r)
 		error("Player sprite is not found");
 	return (0);
 }
