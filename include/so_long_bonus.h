@@ -6,7 +6,7 @@
 /*   By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 16:01:03 by gbreana           #+#    #+#             */
-/*   Updated: 2022/06/05 14:29:33 by gbreana          ###   ########.fr       */
+/*   Updated: 2022/06/05 21:08:14 by gbreana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 */
 # define S_HEIGHT	64
 # define S_WIDHT	64
+# define UPD_TIME	15
 /*
 	Assets
 */
@@ -29,14 +30,11 @@
 # define EXIT_OP	"./assets/bonus/door_op.xpm"
 # define COIN_1		"./assets/bonus/coin_1.xpm"
 # define COIN_2		"./assets/bonus/coin_2.xpm"
-# define PLAYER_S	"./assets/bonus/player_forward.xpm"
-# define PLAYER_L	"./assets/bonus/player_left.xpm"
-# define PLAYER_R	"./assets/bonus/player_right.xpm"
-# define PLAYER_U	"./assets/bonus/player_up.xpm"
-# define PLAYER_D	"./assets/bonus/player_down.xpm"
-# define RAIDER_S	"./assets/bonus/raider_stay.xpm"
-# define RAIDER_J	"./assets/bonus/raider_jump.xpm"
-# define RAIDER_D	"./assets/bonus/raider_d.xpm"
+# define PLAYER_S	"./assets/bonus/player_s.xpm"
+# define PLAYER_L	"./assets/bonus/player_l.xpm"
+# define PLAYER_R	"./assets/bonus/player_r.xpm"
+# define RAIDER_L	"./assets/bonus/raider_l.xpm"
+# define RAIDER_R	"./assets/bonus/raider_r.xpm"
 /*
 	Keycodes
 */
@@ -58,9 +56,9 @@ typedef struct s_assets
 {
 	void	*wall;
 	void	*floor;
+	void	*item;
 	void	*item_1;
 	void	*item_2;
-	void	*item_3;
 	void	*exit;
 	void	*exit_cl;
 	void	*exit_op;
@@ -68,11 +66,9 @@ typedef struct s_assets
 	void	*player_s;
 	void	*player_l;
 	void	*player_r;
-	void	*player_u;
-	void	*player_d;
 	void	*raider;
-	void	*raider_s;
-	void	*raider_j;
+	void	*raider_l;
+	void	*raider_r;
 }				t_assets;
 
 typedef struct s_game
@@ -119,12 +115,16 @@ int		count_lines(char *filename);
 	Initialisation
 */
 t_game	*init_game(char *filename, int s_height, int s_widht);
-void	init_sprites(t_game *game);
+void	init_player_sprites(t_game *game);
+void	init_env_sprites(t_game *game);
+void	init_raider_sprites(t_game *game);
+void	init_all_sprites(t_game *game);
 /*
 	Render
 */
 int		render_map(t_game *game);
 void	put_sprite(t_game *game, int i, int j);
+void	update_sprites(t_game *game);
 void	step(t_game *game);
 /*
 	Movements

@@ -6,7 +6,7 @@
 /*   By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 23:09:17 by gbreana           #+#    #+#             */
-/*   Updated: 2022/06/05 14:25:02 by gbreana          ###   ########.fr       */
+/*   Updated: 2022/06/05 18:01:39 by gbreana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int	check_sprites(t_assets *sprites)
 		error("Collectible sprite is not found");
 	if (!sprites->player_l || !sprites->player_r)
 		error("Player sprite is not found");
-	if (!sprites->raider_s || !sprites->raider_j)
+	if (!sprites->raider_l || !sprites->raider_r)
 		error("Raider sprite is not found");
 	return (0);
 }

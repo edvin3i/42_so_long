@@ -6,7 +6,7 @@
 #    By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/20 08:25:42 by gbreana           #+#    #+#              #
-#    Updated: 2022/06/05 14:36:43 by gbreana          ###   ########.fr        #
+#    Updated: 2022/06/05 14:40:16 by gbreana          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,7 @@ $(NAME):		$(MLXLIB) $(LIBFT) $(MOBJS)
 
 bonus:			$(MLXLIB) $(LIBFT) $(BOBJS)
 				@make -s -C ./mlx
-				@$(CC) $(BOBJS) $(LIB) $(MLX) -o so_long_bonus #$@
+				@$(CC) $(BOBJS) $(LIB) $(MLX) -o so_long_bonus
 
 clean:
 				@make clean -s -C ./libft
@@ -75,7 +75,7 @@ clean:
 fclean:			clean
 				@make fclean -s -C ./libft
 				@make re -s -C ./mlx
-				$(RM) $(NAME)
+				$(RM) $(NAME) so_long_bonus
 
 re:				fclean all
 

@@ -6,7 +6,7 @@
 /*   By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 17:36:49 by gbreana           #+#    #+#             */
-/*   Updated: 2022/06/05 14:27:58 by gbreana          ###   ########.fr       */
+/*   Updated: 2022/06/05 21:16:01 by gbreana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,17 @@ t_game	    *init_game(char *filename, int s_height, int s_widht)
 	return (game);
 }
 
-void   init_sprites(t_game *game)
+void	init_player_sprites(t_game *game)
+{
+	game->sprites.player_s = mlx_xpm_file_to_image(game->mlx, PLAYER_S, \
+						&game->s_widht, &game->s_height);
+	game->sprites.player_l = mlx_xpm_file_to_image(game->mlx, PLAYER_L, \
+						&game->s_widht, &game->s_height);
+	game->sprites.player_r = mlx_xpm_file_to_image(game->mlx, PLAYER_R, \
+						&game->s_widht, &game->s_height);
+}
+
+void	init_env_sprites(t_game *game)
 {
 	game->sprites.wall = mlx_xpm_file_to_image(game->mlx, WALL, \
 						&game->s_height, &game->s_widht);  
@@ -55,17 +65,24 @@ void   init_sprites(t_game *game)
 						&game->s_widht, &game->s_height);
 	game->sprites.item_2 = mlx_xpm_file_to_image(game->mlx, COIN_2, \
 						&game->s_widht, &game->s_height);
-	game->sprites.player_l = mlx_xpm_file_to_image(game->mlx, PLAYER_L, \
+}
+void	init_raider_sprites(t_game *game)
+{
+	game->sprites.raider_l = mlx_xpm_file_to_image(game->mlx, RAIDER_L, \
 						&game->s_widht, &game->s_height);
-	game->sprites.player_r = mlx_xpm_file_to_image(game->mlx, PLAYER_R, \
+	game->sprites.raider_r = mlx_xpm_file_to_image(game->mlx, RAIDER_R, \
 						&game->s_widht, &game->s_height);
-	game->sprites.raider_s = mlx_xpm_file_to_image(game->mlx, RAIDER_S, \
-						&game->s_widht, &game->s_height);
-	game->sprites.raider_j = mlx_xpm_file_to_image(game->mlx, RAIDER_J, \
-						&game->s_widht, &game->s_height);
-	game->sprites.player = game->sprites.player_l;
+}
+
+void	init_all_sprites(t_game *game)
+{
+	init_player_sprites(game);
+	init_env_sprites(game);
+	init_raider_sprites(game);
+	game->sprites.item = game->sprites.item_1;
 	game->sprites.exit = game->sprites.exit_cl;
-	game->sprites.raider = game->sprites.raider_s;
+	game->sprites.player = game->sprites.player_s;
+	game->sprites.raider = game->sprites.raider_l;
 	check_sprites(&game->sprites);
 	
 }

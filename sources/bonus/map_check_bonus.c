@@ -6,7 +6,7 @@
 /*   By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 13:18:51 by gbreana           #+#    #+#             */
-/*   Updated: 2022/06/05 14:17:44 by gbreana          ###   ########.fr       */
+/*   Updated: 2022/06/05 21:25:03 by gbreana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@ int	check_map_symbols(t_game *game)
 {
 	int		i;
 	int		j;
-	char	chrs[7] = "01CEPR";
+	char	chrs[7];
 	
 	i = game->map_height;
+	ft_strlcpy(chrs, "01CEPR", 7);
 	while(--i >= 0)
 	{
 		j = 0;
