@@ -6,7 +6,7 @@
 #    By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/20 08:25:42 by gbreana           #+#    #+#              #
-#    Updated: 2022/06/05 01:10:04 by gbreana          ###   ########.fr        #
+#    Updated: 2022/06/05 02:25:56 by gbreana          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,6 @@ LIB			=	-L ./libft -lft
 LIBFT		=	libft.a
 MLX			=	-L ./mlx -lmlx -framework OpenGL -framework Appkit
 MLXLIB		=	mlx
-
 
 MDIR		= 	./sources/mandatory/
 BDIR		=	./sources/bonus/
@@ -44,16 +43,13 @@ CC			=	cc
 CFLAGS		=	-Wall -Werror -Wextra -MD 
 RM			=	rm -rf
 
-
-
 override		OBJS_ALL ?= $(MOBJS)
 override		DEP_ALL ?= $(DEPS)
 
-$(MDIR)/%.o:	%.c Makefile libft/libft.a
+$(MDIR)%.o:		$(MDIR)%.c Makefile libft/libft.a include/so_long.h
 				$(CC) $(CFLAGS) -Imlx -I $(INCLM) -c $< -o ${<:.c=.o}
-$(BDIR)/%.o:	%.c Makefile libft/libft.a
+$(BDIR)%.o:		$(BDIR)%.c Makefile libft/libft.a
 				$(CC) $(CFLAGS) -Imlx -I $(INCLB) -c $< -o ${<:.c=.o}
-
 
 all:			$(LIBFT) $(MLXLIB) $(NAME)
 

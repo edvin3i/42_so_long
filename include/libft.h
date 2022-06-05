@@ -6,7 +6,7 @@
 /*   By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 09:32:45 by gbreana           #+#    #+#             */
-/*   Updated: 2022/05/13 00:16:42 by gbreana          ###   ########.fr       */
+/*   Updated: 2022/06/05 02:03:51 by gbreana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,10 @@
 # include <stdarg.h>
 # include <fcntl.h>
 # include <limits.h>
-
 /*
  * Macroses
  */
 # define LLONGMAX 		9223372036854775807ull
-
 /*
  * Structs
  */
@@ -37,7 +35,6 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }				t_list;
-
 /*
  * Part 1 Functions
  */
@@ -86,7 +83,6 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-
 /*
  * For ft_printf
  */
@@ -98,7 +94,6 @@ int		ft_puthex(unsigned long num, int c);
 int		ft_putptr(uintptr_t num);
 int		ft_putunbr(unsigned int num);
 int		ft_strchri(const char *str, int c);
-
 /*
  * Get Next Line
  */

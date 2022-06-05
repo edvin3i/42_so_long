@@ -6,44 +6,46 @@
 /*   By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 16:01:03 by gbreana           #+#    #+#             */
-/*   Updated: 2022/06/04 14:41:58 by gbreana          ###   ########.fr       */
+/*   Updated: 2022/06/05 02:31:47 by gbreana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-#include "../mlx/mlx.h"
-#include "libft.h"
+# include "../mlx/mlx.h"
+# include "libft.h"
 /*
 	Sprites parameters
 */
-# define	S_HEIGHT	64
-# define	S_WIDHT		64
+# define S_HEIGHT	64
+# define S_WIDHT	64
 /*
 	Assets
 */
-# define	WALL		"./assets/env/wall.xpm"
-# define	FLOOR		"./assets/env/floor.xpm"
-# define	EXIT		"./assets/env/door_cl.xpm"
-# define	COIN		"./assets/env/coin_1.xpm"
-# define	PLAYER		"./assets/hero/player_forward.xpm"
+# define WALL		"./assets/mandatory/wall.xpm"
+# define FLOOR		"./assets/mandatory/floor.xpm"
+# define EXIT		"./assets/mandatory/exit.xpm"
+# define COIN		"./assets/mandatory/coin.xpm"
+# define PLAYER		"./assets/mandatory/player.xpm"
 /*
 	Keycodes
 */
-# define	KEY_W 13
-# define	KEY_A 0
-# define	KEY_S 1
-# define	KEY_D 2
-# define	KEY_ESC 53
-
-typedef struct	s_coord
+# define KEY_W 13
+# define KEY_A 0
+# define KEY_S 1
+# define KEY_D 2
+# define KEY_ESC 53
+/*
+	Structures
+*/
+typedef struct s_coord
 {
 	int	x;
 	int	y;
 }				t_coord;
 
-typedef struct	s_assets
+typedef struct s_assets
 {
 	void	*wall;
 	void	*floor;
@@ -52,7 +54,7 @@ typedef struct	s_assets
 	void	*player;
 }				t_assets;
 
-typedef struct	s_game
+typedef struct s_game
 {
 	void		*mlx;
 	void		*win;
@@ -69,8 +71,6 @@ typedef struct	s_game
 	t_coord		p_coord;
 }				t_game;
 
-
-int		mouse_hook(int keycode);
 /*
 	Errors handling and some utils
 */
@@ -96,13 +96,13 @@ int		count_lines(char *filename);
 /*
 	Initialisation
 */
-t_game		*init_game(char *filename, int s_height, int s_widht);
-void		init_sprites(t_game *game);
+t_game	*init_game(char *filename, int s_height, int s_widht);
+void	init_sprites(t_game *game);
 /*
 	Render
 */
-void    put_sprite(t_game *game, int i, int j);
 int		render_map(t_game *game);
+void	put_sprite(t_game *game, int i, int j);
 void	step(t_game *game);
 /*
 	Movements

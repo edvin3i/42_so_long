@@ -6,7 +6,7 @@
 /*   By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 23:09:17 by gbreana           #+#    #+#             */
-/*   Updated: 2022/06/04 14:42:44 by gbreana          ###   ########.fr       */
+/*   Updated: 2022/06/05 03:16:45 by gbreana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	check_input_params(int argc, char **argv)
 	int		len;
 	int		i;
 	int		j;
-	
+
 	if (argc != 2)
 		error("Wrong number of parameters");
 	len = ft_strlen(argv[1]);
@@ -33,7 +33,7 @@ int	check_input_params(int argc, char **argv)
 	return (0);
 }
 
-void    free2d(char **arr, int len)
+void	free2d(char **arr, int len)
 {
 	if (!arr)
 		return ;
@@ -42,25 +42,25 @@ void    free2d(char **arr, int len)
 	free(arr);
 }
 
-int		sym_count(t_game *game, char symbol)
+int	sym_count(t_game *game, char symbol)
 {
-    int		i;
-	int		j;
-	int		counter;
+	int	i;
+	int	j;
+	int	counter;
 
-counter = 0;	
-i = game->map_height;
-while(--i >= 0)
-{
-	j = 0;
-	while (j < game->map_widht)
+	counter = 0;
+	i = game->map_height;
+	while (--i >= 0)
 	{
-		if (symbol == game->map[i][j])
-			counter++;
-		j++;
+		j = 0;
+		while (j < game->map_widht)
+		{
+			if (symbol == game->map[i][j])
+				counter++;
+			j++;
+		}
 	}
-}
-return (counter);
+	return (counter);
 }
 
 void	map_obj_count(t_game *game)

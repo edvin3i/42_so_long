@@ -6,13 +6,13 @@
 /*   By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 20:00:17 by gbreana           #+#    #+#             */
-/*   Updated: 2022/06/04 14:17:12 by gbreana          ###   ########.fr       */
+/*   Updated: 2022/06/05 03:03:51 by gbreana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-void move_up(t_game *game)
+void	move_up(t_game *game)
 {
 	int	x;
 	int	y;
@@ -28,7 +28,7 @@ void move_up(t_game *game)
 	game->map[y++][x] = '0';
 }
 
-void move_down(t_game *game)
+void	move_down(t_game *game)
 {
 	int	x;
 	int	y;
@@ -44,7 +44,7 @@ void move_down(t_game *game)
 	game->map[y--][x] = '0';
 }
 
-void move_left(t_game *game)
+void	move_left(t_game *game)
 {
 	int	x;
 	int	y;
@@ -60,7 +60,7 @@ void move_left(t_game *game)
 	game->map[y][x++] = '0';
 }
 
-void move_right(t_game *game)
+void	move_right(t_game *game)
 {
 	int	x;
 	int	y;
