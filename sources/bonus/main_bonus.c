@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 16:11:46 by gbreana           #+#    #+#             */
-/*   Updated: 2022/06/03 14:10:36 by gbreana          ###   ########.fr       */
+/*   Updated: 2022/06/05 14:22:39 by gbreana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/so_long.h"
+#include "../../include/so_long_bonus.h"
 
 int     main(int argc, char **argv)
 {
-	(void) argc;
 	t_game	*game;
 	
+	check_input_params(argc, argv);
 	game = init_game(argv[1], S_HEIGHT, S_WIDHT);
 	check_map(game);
 	init_sprites(game);

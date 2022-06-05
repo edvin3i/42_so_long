@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   init_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 17:36:49 by gbreana           #+#    #+#             */
-/*   Updated: 2022/05/31 18:26:15 by gbreana          ###   ########.fr       */
+/*   Updated: 2022/06/05 14:27:58 by gbreana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/so_long.h"
+#include "../../include/so_long_bonus.h"
 
 t_game	    *init_game(char *filename, int s_height, int s_widht)
 {
@@ -65,6 +65,7 @@ void   init_sprites(t_game *game)
 						&game->s_widht, &game->s_height);
 	game->sprites.player = game->sprites.player_l;
 	game->sprites.exit = game->sprites.exit_cl;
+	game->sprites.raider = game->sprites.raider_s;
 	check_sprites(&game->sprites);
 	
 }

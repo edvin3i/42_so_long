@@ -6,7 +6,7 @@
 /*   By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 16:11:46 by gbreana           #+#    #+#             */
-/*   Updated: 2022/06/05 02:53:04 by gbreana          ###   ########.fr       */
+/*   Updated: 2022/06/05 14:22:16 by gbreana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ int	main(int argc, char **argv)
 {
 	t_game	*game;
 
-	if (argc != 2)
-		error("Wrong number of arguments");
+	check_input_params(argc, argv);
 	game = init_game(argv[1], S_HEIGHT, S_WIDHT);
 	check_map(game);
 	init_sprites(game);

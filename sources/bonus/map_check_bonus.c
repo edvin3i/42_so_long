@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_check.c                                        :+:      :+:    :+:   */
+/*   map_check_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 13:18:51 by gbreana           #+#    #+#             */
-/*   Updated: 2022/05/30 12:00:38 by gbreana          ###   ########.fr       */
+/*   Updated: 2022/06/05 14:17:44 by gbreana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/so_long.h"
+#include "../../include/so_long_bonus.h"
 
 int	check_map_symbols(t_game *game)
 {
 	int		i;
 	int		j;
-	char	chrs[6] = "01CEPR";
+	char	chrs[7] = "01CEPR";
 	
 	i = game->map_height;
 	while(--i >= 0)
@@ -25,7 +25,7 @@ int	check_map_symbols(t_game *game)
 		while (j < game->map_widht)
 		{
 			if (!ft_strchr(chrs, game->map[i][j]))
-				error("map contains wrong symbol(s).");
+				error("Map contains wrong symbol(s).");
 			j++;
 		}
 	}

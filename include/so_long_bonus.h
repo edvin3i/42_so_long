@@ -6,7 +6,7 @@
 /*   By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 16:01:03 by gbreana           #+#    #+#             */
-/*   Updated: 2022/06/05 02:26:21 by gbreana          ###   ########.fr       */
+/*   Updated: 2022/06/05 14:29:33 by gbreana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,20 @@
 /*
 	Assets
 */
-# define WALL		"./assets/env/wall.xpm"
-# define FLOOR		"./assets/env/floor.xpm"
-# define EXIT_CL	"./assets/env/door_cl.xpm"
-# define EXIT_OP	"./assets/env/door_op.xpm"
-# define COIN_1		"./assets/env/coin_1.xpm"
-# define COIN_2		"./assets/env/coin_2.xpm"
-# define PLAYER_S	"./assets/hero/player_forward.xpm"
-# define PLAYER_L	"./assets/hero/player_left.xpm"
-# define PLAYER_R	"./assets/hero/player_right.xpm"
-# define PLAYER_U	"./assets/hero/player_up.xpm"
-# define PLAYER_D	"./assets/hero/player_down.xpm"
-# define RAIDER_S	"./assets/enemy/raider_stay.xpm"
-# define RAIDER_J	"./assets/enemy/raider_jump.xpm"
-# define RAIDER_D	"./assets/enemy/raider_d.xpm"
+# define WALL		"./assets/bonus/wall.xpm"
+# define FLOOR		"./assets/bonus/floor.xpm"
+# define EXIT_CL	"./assets/bonus/door_cl.xpm"
+# define EXIT_OP	"./assets/bonus/door_op.xpm"
+# define COIN_1		"./assets/bonus/coin_1.xpm"
+# define COIN_2		"./assets/bonus/coin_2.xpm"
+# define PLAYER_S	"./assets/bonus/player_forward.xpm"
+# define PLAYER_L	"./assets/bonus/player_left.xpm"
+# define PLAYER_R	"./assets/bonus/player_right.xpm"
+# define PLAYER_U	"./assets/bonus/player_up.xpm"
+# define PLAYER_D	"./assets/bonus/player_down.xpm"
+# define RAIDER_S	"./assets/bonus/raider_stay.xpm"
+# define RAIDER_J	"./assets/bonus/raider_jump.xpm"
+# define RAIDER_D	"./assets/bonus/raider_d.xpm"
 /*
 	Keycodes
 */
@@ -70,6 +70,7 @@ typedef struct s_assets
 	void	*player_r;
 	void	*player_u;
 	void	*player_d;
+	void	*raider;
 	void	*raider_s;
 	void	*raider_j;
 }				t_assets;

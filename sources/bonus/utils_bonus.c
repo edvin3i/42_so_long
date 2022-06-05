@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utils_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 23:09:17 by gbreana           #+#    #+#             */
-/*   Updated: 2022/06/03 14:58:22 by gbreana          ###   ########.fr       */
+/*   Updated: 2022/06/05 14:25:02 by gbreana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/so_long.h"
+#include "../../include/so_long_bonus.h"
 
 int	check_input_params(int argc, char **argv)
 {
@@ -20,7 +20,7 @@ int	check_input_params(int argc, char **argv)
 	int		j;
 	
 	if (argc != 2)
-		error("Wrong number of parameters");
+		error("Wrong number of parameters.");
 	len = ft_strlen(argv[1]);
 	i = len - 4;
 	j = 0;
@@ -83,5 +83,7 @@ int	check_sprites(t_assets *sprites)
 		error("Collectible sprite is not found");
 	if (!sprites->player_l || !sprites->player_r)
 		error("Player sprite is not found");
+	if (!sprites->raider_s || !sprites->raider_j)
+		error("Raider sprite is not found");
 	return (0);
 }

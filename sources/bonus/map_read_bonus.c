@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_read.c                                         :+:      :+:    :+:   */
+/*   map_read_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 08:52:46 by gbreana           #+#    #+#             */
-/*   Updated: 2022/05/30 11:34:34 by gbreana          ###   ########.fr       */
+/*   Updated: 2022/06/05 14:13:45 by gbreana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/so_long.h"
-
-
+#include "../../include/so_long_bonus.h"
 
 int     count_lines(char *filename)
 {
@@ -30,7 +28,7 @@ int     count_lines(char *filename)
 			if (tmp[0] == '\n')
 			{
 				free(tmp);
-				error("map has zero lines.");
+				error("Map has zero lines.");
 			}
 			lines_num++;
 		}
@@ -51,7 +49,7 @@ char    *file_to_array(char *filename)
 	
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
-		error("file is not readable.");
+		error("File is not readable.");
 	line = ft_strdup("");
 	while (1)
 	{

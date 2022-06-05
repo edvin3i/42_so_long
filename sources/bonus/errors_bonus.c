@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   errors_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 16:12:45 by gbreana           #+#    #+#             */
-/*   Updated: 2022/06/03 14:36:58 by gbreana          ###   ########.fr       */
+/*   Updated: 2022/06/05 14:17:31 by gbreana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/so_long.h"
+#include "../../include/so_long_bonus.h"
 
 int	error(char *message)
 {
-	ft_printf("\n\e[41mError:\n%s\e[0m\n", message);
+	ft_printf("\n\e[41mError\n%s\e[0m\n", message);
 	ft_printf("\n\e[46m\e[30mUsage: ./so_long [MAP_FILENAME.ber]\e[0m\n");
 	exit(0);
 }

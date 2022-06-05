@@ -6,7 +6,7 @@
 /*   By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 16:12:45 by gbreana           #+#    #+#             */
-/*   Updated: 2022/06/05 03:02:32 by gbreana          ###   ########.fr       */
+/*   Updated: 2022/06/05 11:34:26 by gbreana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	error(char *message)
 {
-	ft_printf("\n\e[41mError:\n%s\e[0m\n", message);
+	ft_printf("\n\e[41mError\n%s\e[0m\n", message);
 	ft_printf("\n\e[46m\e[30mUsage: ./so_long [MAP_FILENAME.ber]\e[0m\n");
 	exit(0);
 }
