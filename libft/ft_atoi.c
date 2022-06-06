@@ -6,12 +6,11 @@
 /*   By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 11:49:51 by gbreana           #+#    #+#             */
-/*   Updated: 2022/05/03 16:15:45 by gbreana          ###   ########.fr       */
+/*   Updated: 2022/06/06 15:12:30 by gbreana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
-
 
 int	ft_atoi(const char *str)
 {

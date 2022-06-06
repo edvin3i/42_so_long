@@ -6,7 +6,7 @@
 #    By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/20 08:25:42 by gbreana           #+#    #+#              #
-#    Updated: 2022/06/05 14:40:16 by gbreana          ###   ########.fr        #
+#    Updated: 2022/06/06 13:01:48 by gbreana          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,8 @@ MFLS		=	main.c errors.c init.c \
 				utils.c render.c moves.c
 BFLS		=	main_bonus.c errors_bonus.c init_bonus.c \
 				hooks_bonus.c map_read_bonus.c map_check_bonus.c \
-				utils_bonus.c render_bonus.c moves_bonus.c
+				utils_bonus.c render_bonus.c moves_bonus.c \
+				raiders_moves_bonus.c raiders_bonus.c
 
 MSRC		=	$(addprefix $(MDIR), $(MFLS))
 BSRC		=	$(addprefix $(BDIR), $(BFLS))
@@ -65,7 +66,7 @@ $(NAME):		$(MLXLIB) $(LIBFT) $(MOBJS)
 
 bonus:			$(MLXLIB) $(LIBFT) $(BOBJS)
 				@make -s -C ./mlx
-				@$(CC) $(BOBJS) $(LIB) $(MLX) -o so_long_bonus
+				@$(CC) $(BOBJS) $(LIB) $(MLX) -o so_long
 
 clean:
 				@make clean -s -C ./libft

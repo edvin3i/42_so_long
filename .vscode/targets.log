@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Sun Jun  5 14:40:50 2022
+# Make data base, printed on Mon Jun  6 13:01:50 2022
 
 # Variables
 
@@ -17,7 +17,6 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # automatic
 ?F = $(notdir $?)
 # environment
- 
 VSCODE_LOG_NATIVE = false
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
@@ -31,21 +30,22 @@ PLATFORMIO_IDE = 2.4.3
 CURDIR := /Users/edvin/school/cursus/42_so_long
 # makefile
 SHELL = /bin/sh
-# makefile (from `Makefile', line 44)
+# makefile (from `Makefile', line 45)
 RM = rm -rf
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-gb","availableLanguages":{},"_languagePackSupport":true}
 # makefile (from `Makefile', line 20)
 MLX = -L ./mlx -lmlx -framework OpenGL -framework Appkit
 # environment
+ 
 _ = /usr/bin/make
-# makefile (from `Makefile', line 43)
+# makefile (from `Makefile', line 44)
 CFLAGS = -Wall -Werror -Wextra -MD 
-# makefile (from `Makefile', line 39)
+# makefile (from `Makefile', line 40)
 MDEPS = $(patsubst %.c,%.d,$(MSRC))
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
-# `override' directive (from `Makefile', line 46)
+# `override' directive (from `Makefile', line 47)
 OBJS_ALL = $(MOBJS)
 # environment
 VSCODE_VERBOSE_LOGGING = true
@@ -81,9 +81,9 @@ BDIR = ./sources/bonus/
 VSCODE_PIPE_LOGGING = true
 # environment
 PWD = /Users/edvin/school/cursus/42_so_long
-# makefile (from `Makefile', line 37)
+# makefile (from `Makefile', line 38)
 BOBJS = $(patsubst %.c,%.o,$(BSRC))
-# `override' directive (from `Makefile', line 47)
+# `override' directive (from `Makefile', line 48)
 DEP_ALL = $(DEPS)
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
@@ -107,7 +107,7 @@ ZSH = /Users/edvin/.oh-my-zsh
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
-# makefile (from `Makefile', line 34)
+# makefile (from `Makefile', line 35)
 BSRC = $(addprefix $(BDIR), $(BFLS))
 # environment
 PLATFORMIO_PATH = /Users/edvin/.platformio/penv/bin:/Users/edvin/.platformio/penv:/Users/edvin/.platformio/python3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/usr/local/opt/fzf/bin
@@ -125,10 +125,9 @@ SHLVL = 1
 XPC_FLAGS = 0x0
 # makefile (from `Makefile', line 19)
 LIBFT = libft.a
-# makefile (from `Makefile', line 42)
+# makefile (from `Makefile', line 43)
 CC = cc
 # default
- 
 MAKE_VERSION := 3.81
 # environment
 USER = edvin
@@ -136,7 +135,7 @@ USER = edvin
 .DEFAULT_GOAL := all
 # makefile (from `Makefile', line 13)
 NAME = so_long
-# makefile (from `Makefile', line 33)
+# makefile (from `Makefile', line 34)
 MSRC = $(addprefix $(MDIR), $(MFLS))
 # environment
 LESS = -R
@@ -144,7 +143,7 @@ LESS = -R
 %D = $(patsubst %/,%,$(dir $%))
 # makefile (from `Makefile', line 21)
 MLXLIB = mlx
-# makefile (from `Makefile', line 36)
+# makefile (from `Makefile', line 37)
 MOBJS = $(patsubst %.c,%.o,$(MSRC))
 # default
 MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
@@ -175,7 +174,7 @@ __CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x0
 # environment
 COMMAND_MODE = unix2003
 # makefile (from `Makefile', line 29)
-BFLS = main_bonus.c errors_bonus.c init_bonus.c hooks_bonus.c map_read_bonus.c map_check_bonus.c utils_bonus.c render_bonus.c moves_bonus.c
+BFLS = main_bonus.c errors_bonus.c init_bonus.c hooks_bonus.c map_read_bonus.c map_check_bonus.c utils_bonus.c render_bonus.c moves_bonus.c raiders_moves_bonus.c raiders_bonus.c
 # default
 MAKEFILES := 
 # automatic
@@ -196,7 +195,7 @@ SUFFIXES :=
 SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
 # default
 .INCLUDE_DIRS = /usr/local/include
-# makefile (from `Makefile', line 40)
+# makefile (from `Makefile', line 41)
 BDEPS = $(patsubst %.c,%.d,$(BSRC))
 # environment
 MAKELEVEL := 0
@@ -217,29 +216,35 @@ VSCODE_PID = 1454
 
 # Directories
 
-# . (device 16777220, inode 65246630): 13 files, no impossibilities.
+# . (device 16777220, inode 65246630): 14 files, no impossibilities.
+ 
 
-# 13 files, no impossibilities in 1 directories.
+# 14 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
 sources/mandatory/%.o: ./sources/mandatory/%.c Makefile libft/libft.a
-#  commands to execute (from `Makefile', line 50):
+#  commands to execute (from `Makefile', line 51):
 	$(CC) $(CFLAGS) -Imlx -I $(INCLM) -c $< -o ${<:.c=.o}
 	
 
 sources/bonus/%.o: ./sources/bonus/%.c Makefile libft/libft.a
-#  commands to execute (from `Makefile', line 52):
+#  commands to execute (from `Makefile', line 53):
 	$(CC) $(CFLAGS) -Imlx -I $(INCLB) -c $< -o ${<:.c=.o}
 	
 
 # 2 implicit rules, 0 (0.0%) terminal.
- 
 
 # Files
 
 # Not a target:
 sources/bonus/map_read_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+sources/bonus/raiders_bonus.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -276,7 +281,7 @@ mlx:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 60):
+#  commands to execute (from `Makefile', line 61):
 	@make -C ./mlx
 	
 
@@ -300,7 +305,7 @@ sources/bonus/init_bonus.o:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-05 14:40:16
+#  Last modified 2022-06-06 13:01:48
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -336,18 +341,25 @@ libft.a:
 # ? := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/10=10%
-#  commands to execute (from `Makefile', line 57):
+#  commands to execute (from `Makefile', line 58):
 	@make -C ./libft
+ 
 	
 
-bonus: mlx libft.a sources/bonus/main_bonus.o sources/bonus/errors_bonus.o sources/bonus/init_bonus.o sources/bonus/hooks_bonus.o sources/bonus/map_read_bonus.o sources/bonus/map_check_bonus.o sources/bonus/utils_bonus.o sources/bonus/render_bonus.o sources/bonus/moves_bonus.o
+# Not a target:
+sources/bonus/raiders_moves_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+bonus: mlx libft.a sources/bonus/main_bonus.o sources/bonus/errors_bonus.o sources/bonus/init_bonus.o sources/bonus/hooks_bonus.o sources/bonus/map_read_bonus.o sources/bonus/map_check_bonus.o sources/bonus/utils_bonus.o sources/bonus/render_bonus.o sources/bonus/moves_bonus.o sources/bonus/raiders_moves_bonus.o sources/bonus/raiders_bonus.o
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 67):
+#  commands to execute (from `Makefile', line 68):
 	@make -s -C ./mlx
-	@$(CC) $(BOBJS) $(LIB) $(MLX) -o so_long_bonus
+	@$(CC) $(BOBJS) $(LIB) $(MLX) -o so_long
 	
 
 # Not a target:
@@ -361,7 +373,7 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 76):
+#  commands to execute (from `Makefile', line 77):
 	@make fclean -s -C ./libft
 	@make re -s -C ./mlx
 	$(RM) $(NAME) so_long_bonus
@@ -390,7 +402,6 @@ sources/mandatory/main.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
 
 # Not a target:
 sources/bonus/hooks_bonus.o:
@@ -409,7 +420,7 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 71):
+#  commands to execute (from `Makefile', line 72):
 	@make clean -s -C ./libft
 	@make clean -s -C ./mlx
 	$(RM) $(MOBJS) $(MDEPS) $(BOBJS) $(BDEPS)
@@ -443,7 +454,7 @@ so_long: mlx libft.a sources/mandatory/main.o sources/mandatory/errors.o sources
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 63):
+#  commands to execute (from `Makefile', line 64):
 	@make -s -C ./mlx
 	@$(CC) $(MOBJS) $(LIB) $(MLX) -o $@
 	
@@ -467,7 +478,7 @@ sources/mandatory/utils.o:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=30/1024=3%, Rehash=0, Collisions=4/77=5%
+# Load=32/1024=3%, Rehash=0, Collisions=4/81=5%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -476,9 +487,10 @@ sources/mandatory/utils.o:
 
 # # of strings in strcache: 1
 # # of strcache buffers: 1
+ 
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sun Jun  5 14:40:50 2022
+# Finished Make data base on Mon Jun  6 13:01:50 2022
 
  

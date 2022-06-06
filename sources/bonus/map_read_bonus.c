@@ -6,21 +6,21 @@
 /*   By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 08:52:46 by gbreana           #+#    #+#             */
-/*   Updated: 2022/06/05 14:13:45 by gbreana          ###   ########.fr       */
+/*   Updated: 2022/06/06 14:57:06 by gbreana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long_bonus.h"
 
-int     count_lines(char *filename)
+int	count_lines(char *filename)
 {
-	int     lines_num;
-	int     fd;
-	char    *tmp;
-	
+	int		lines_num;
+	int		fd;
+	char	*tmp;
+
 	fd = open(filename, O_RDONLY);
 	lines_num = 0;
-	while(1)
+	while (1)
 	{
 		tmp = get_next_line(fd);
 		if (tmp)
@@ -40,13 +40,13 @@ int     count_lines(char *filename)
 	return (lines_num);
 }
 
-char    *file_to_array(char *filename)
+char	*file_to_array(char *filename)
 {
 	int		fd;
 	char	*temp;
 	char	*line;
 	char	*new_line;
-	
+
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		error("File is not readable.");

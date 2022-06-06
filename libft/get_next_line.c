@@ -6,7 +6,7 @@
 /*   By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 20:18:38 by gbreana           #+#    #+#             */
-/*   Updated: 2022/05/13 17:44:35 by gbreana          ###   ########.fr       */
+/*   Updated: 2022/06/06 15:12:02 by gbreana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_get_new_chars(int fd, char *saved_lines)
 	int		chars_counter;
 	char	buffer[BUFFER_SIZE + 1];
 	char	*line;
-	
+
 	chars_counter = 1;
 	while (!ft_strchr(saved_lines, '\n') && chars_counter != 0)
 	{
@@ -114,4 +114,3 @@ char	*get_next_line(int fd)
 	free(line);
 	return (NULL);
 }
-

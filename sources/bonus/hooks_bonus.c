@@ -6,7 +6,7 @@
 /*   By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 11:37:35 by gbreana           #+#    #+#             */
-/*   Updated: 2022/06/05 14:09:36 by gbreana          ###   ########.fr       */
+/*   Updated: 2022/06/06 15:04:20 by gbreana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	is_end(t_game *game, int keycode)
 {
 	int	x;
 	int	y;
-	int c;
+	int	c;
 
 	x = game->p_coord.x;
 	y = game->p_coord.y;
@@ -36,7 +36,7 @@ int	key_hook(int keycode, t_game *game)
 {
 	int	x;
 	int	y;
-	int end_flag;
+	int	end_flag;
 
 	x = game->p_coord.x;
 	y = game->p_coord.y;

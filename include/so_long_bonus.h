@@ -6,7 +6,7 @@
 /*   By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 16:01:03 by gbreana           #+#    #+#             */
-/*   Updated: 2022/06/05 21:08:14 by gbreana          ###   ########.fr       */
+/*   Updated: 2022/06/06 14:27:40 by gbreana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 */
 # define S_HEIGHT	64
 # define S_WIDHT	64
-# define UPD_TIME	15
+# define UPD_TIME	25
 /*
 	Assets
 */
@@ -87,13 +87,14 @@ typedef struct s_game
 	int			steps;
 	t_assets	sprites;
 	t_coord		p_coord;
-	t_coord		r_coord;
+	t_coord		r_coord[10];
 }				t_game;
 /*
 	Errors handling and some utils
 */
 int		error(char *message);
 int		game_over(t_game *game);
+int		end_game(t_game *game);
 /*
 	Utils
 */
@@ -117,7 +118,7 @@ int		count_lines(char *filename);
 t_game	*init_game(char *filename, int s_height, int s_widht);
 void	init_player_sprites(t_game *game);
 void	init_env_sprites(t_game *game);
-void	init_raider_sprites(t_game *game);
+void	init_raiders(t_game *game);
 void	init_all_sprites(t_game *game);
 /*
 	Render
@@ -135,4 +136,13 @@ void	move_up(t_game *game);
 void	move_down(t_game *game);
 void	move_left(t_game *game);
 void	move_right(t_game *game);
+/*
+	Raiders
+*/
+int		raiders_move(t_game *game);
+void	sel_direction(t_game *game, int r_num, int direction);
+void	raiders_move_up(t_game *game, int r_num);
+void	raiders_move_down(t_game *game, int r_num);
+void	raiders_move_left(t_game *game, int r_num);
+void	raiders_move_right(t_game *game, int r_num);
 #endif
