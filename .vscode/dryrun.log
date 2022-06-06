@@ -1,23 +1,15 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/edvin/school/cursus/42_so_long'
 make -C ./libft
- 
+make -C ./mlx
 cc -Wall -Werror -Wextra -MD  -Imlx -I ./include/so_long.h -c sources/mandatory/main.c -o sources/mandatory/main.o
- 
 cc -Wall -Werror -Wextra -MD  -Imlx -I ./include/so_long.h -c sources/mandatory/errors.c -o sources/mandatory/errors.o
- 
 cc -Wall -Werror -Wextra -MD  -Imlx -I ./include/so_long.h -c sources/mandatory/init.c -o sources/mandatory/init.o
- 
 cc -Wall -Werror -Wextra -MD  -Imlx -I ./include/so_long.h -c sources/mandatory/hooks.c -o sources/mandatory/hooks.o
- 
 cc -Wall -Werror -Wextra -MD  -Imlx -I ./include/so_long.h -c sources/mandatory/map_read.c -o sources/mandatory/map_read.o
- 
 cc -Wall -Werror -Wextra -MD  -Imlx -I ./include/so_long.h -c sources/mandatory/map_check.c -o sources/mandatory/map_check.o
- 
 cc -Wall -Werror -Wextra -MD  -Imlx -I ./include/so_long.h -c sources/mandatory/utils.c -o sources/mandatory/utils.o
- 
 cc -Wall -Werror -Wextra -MD  -Imlx -I ./include/so_long.h -c sources/mandatory/render.c -o sources/mandatory/render.o
- 
 cc -Wall -Werror -Wextra -MD  -Imlx -I ./include/so_long.h -c sources/mandatory/moves.c -o sources/mandatory/moves.o
 make -s -C ./mlx
 cc ./sources/mandatory/main.o ./sources/mandatory/errors.o ./sources/mandatory/init.o ./sources/mandatory/hooks.o ./sources/mandatory/map_read.o ./sources/mandatory/map_check.o ./sources/mandatory/utils.o ./sources/mandatory/render.o ./sources/mandatory/moves.o -L ./libft -lft -L ./mlx -lmlx -framework OpenGL -framework Appkit -o so_long

@@ -31,7 +31,7 @@ int	game_over(t_game *game)
 
 int	end_game(t_game *game)
 {
-	ft_printf("\n\e[42m\e[30m<---------->You are WIN!!!<---------->\e[0m\n");
+	ft_printf("\n\e[42m\e[30m<---------->You are WINNER!!!<---------->\e[0m\n");
 	mlx_destroy_window(game->mlx, game->win);
 	free2d(game->map, game->map_height);
 	free(game);
