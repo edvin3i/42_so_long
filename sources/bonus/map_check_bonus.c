@@ -6,7 +6,7 @@
 /*   By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 13:18:51 by gbreana           #+#    #+#             */
-/*   Updated: 2022/06/06 14:55:37 by gbreana          ###   ########.fr       */
+/*   Updated: 2022/06/08 00:49:32 by gbreana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,8 @@ int	check_map(t_game *game)
 		error("Map does not contains any colectible.");
 	else if (!game->exits)
 		error("Map does not contains any exit.");
-	else if (!game->players)
-		error("Map does not contains any player.");
+	else if (game->players != 1)
+		error("Map contains wrong number of players.");
 	else if (game->map_height <= 1)
 		error("Map is too small.");
 	else if (!game->map_height && !game->map_widht)
