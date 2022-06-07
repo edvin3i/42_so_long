@@ -55,7 +55,6 @@ void	move_left(t_game *game)
 
 	x = game->p_coord.x;
 	y = game->p_coord.y;
-	step(game);
 	if (game->map[y][x - 1] == 'C')
 		game->coins--;
 	else if (game->map[y][x - 1] == 'E')

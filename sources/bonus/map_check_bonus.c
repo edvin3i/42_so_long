@@ -38,12 +38,12 @@ int	check_map_size(t_game *game)
 	int	i;
 
 	if (!game->map_height || !game->map_widht)
-		error("map has zero lines.");
+		error("Map has zero lines.");
 	i = 0;
 	while (++i < game->map_height)
 	{
 		if (ft_strlen(game->map[i]) != game->map_widht)
-			error("map size is not valid.");
+			error("Map size is not valid.");
 	}
 	return (0);
 }
@@ -62,12 +62,12 @@ int	check_map_walls(t_game *game)
 			while (j < game->map_widht)
 			{
 				if (game->map[i][j] != '1')
-					error("map has broken walls.");
+					error("Map has broken walls.");
 				j++;
 			}
 		}
 		if (game->map[i][0] != '1' || game->map[i][game->map_widht - 1] != '1')
-			error("map has broken walls.");
+			error("Map has broken walls.");
 		i++;
 	}
 	return (0);
@@ -80,14 +80,14 @@ int	check_map(t_game *game)
 	check_map_walls(game);
 	map_obj_count(game);
 	if (!game->coins)
-		error("map does not contains any colectible.");
+		error("Map does not contains any colectible.");
 	else if (!game->exits)
-		error("map does not contains any exit.");
+		error("Map does not contains any exit.");
 	else if (!game->players)
-		error("map does not contains any player.");
+		error("Map does not contains any player.");
 	else if (game->map_height <= 1)
-		error("map is too small.");
+		error("Map is too small.");
 	else if (!game->map_height && !game->map_widht)
-		error("map is empty.");
+		error("Map is empty.");
 	return (0);
 }
