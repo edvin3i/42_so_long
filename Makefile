@@ -6,7 +6,7 @@
 #    By: gbreana <gbreana@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/20 08:25:42 by gbreana           #+#    #+#              #
-#    Updated: 2022/06/06 13:01:48 by gbreana          ###   ########.fr        #
+#    Updated: 2022/06/08 01:15:03 by gbreana          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,9 +47,9 @@ RM			=	rm -rf
 override		OBJS_ALL ?= $(MOBJS)
 override		DEP_ALL ?= $(DEPS)
 
-$(MDIR)%.o:		$(MDIR)%.c Makefile libft/libft.a
+$(MDIR)%.o:		$(MDIR)%.c Makefile libft/libft.a include/so_long.h
 				$(CC) $(CFLAGS) -Imlx -I $(INCLM) -c $< -o ${<:.c=.o}
-$(BDIR)%.o:		$(BDIR)%.c Makefile libft/libft.a
+$(BDIR)%.o:		$(BDIR)%.c Makefile libft/libft.a include/so_long_bonus.h
 				$(CC) $(CFLAGS) -Imlx -I $(INCLB) -c $< -o ${<:.c=.o}
 
 all:			$(LIBFT) $(MLXLIB) $(NAME)
